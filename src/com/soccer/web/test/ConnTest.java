@@ -29,7 +29,7 @@ public class ConnTest {
 				while(rs.next()) {
 					list.add(rs.getString("PLAYER_NAME"));
 				}
-				System.out.println("선수들 이름: \n" + list);
+				System.out.println("선수들 이름 : \n" + list);
 			}else {
 				System.out.println("fail");
 			}
