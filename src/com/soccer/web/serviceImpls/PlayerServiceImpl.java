@@ -9,10 +9,15 @@ import com.soccer.web.services.PlayerService;
 public class PlayerServiceImpl implements PlayerService{
 	//singleton pattern
 	private static PlayerServiceImpl instance = new PlayerServiceImpl();
-	public static PlayerServiceImpl getInstance() {
-		return instance;
-	}
+	public static PlayerServiceImpl getInstance() {return instance;}
 	private PlayerServiceImpl() {}
+	
+	public PlayerBean login(PlayerBean param) {
+		System.out.println("서비스임플 로그인 접속");
+		System.out.println("playerId값" + param.getPlayerId());
+		System.out.println("solar값" + param.getSolar());
+		return PlayerDaoImpl.getInstance().selectByPlayerIdSolar(param);
+	}
 	public List<String> findPositions() {
 		return PlayerDaoImpl.getInstance().selectPositions();
 	}

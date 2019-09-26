@@ -1,45 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>welcome</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<meta charset="UTF-8" />
+	<title>Document</title>
 </head>
 <body>
-<div>
-		<h2>2.포지션 종류보기</h2>
-		<a id = "btn2" href=#>2. 포지션 종류보기</a>
-		<h2>4.팀아이디로 포지션 찾기</h2>
-			<form id = "btn4" action="<%=request.getContextPath()%>/player.do">
-			팀아이디 <input type="text" name = "teamId"/><br/>
-			포지션  <input type="text" name = "position"/><br/>
-			<input type="hidden" name = "action" value="find4"/><br/>
-			<input type="hidden" name = "page" value="4_find_by_teamId_position"/><br/>
-			<input type="submit" value = "전송"/>
-			</form>
-		<h2>5.수원팀(K02)에서 키가 170이상, 성이 고씨인 선수</h2>
-			<form id = "btn5" action="<%=request.getContextPath()%>/player.do">
-			팀아이디 <input type="text" name="teamId"/><br/>
-			신장<input type="text" name="height"/><br/>
-			선수이름<input type="text" name="playerName"/><br/>
-			<input type="hidden" name = "action" value="find5"/><br/>
-			<input type="hidden" name = "page" value="5_find_by_teamId_height_name"/><br/>
-			<input type="submit" value = "전송"/>
-			</form>
+<div id="wrapper" style="width: 100%; height:100%">
+<form id="login_form" action="<%=request.getContextPath()%>/player.do">
+	<h2 style="width:300px; margin:0px auto">축협 관리 시스템</h2>
+	<table border="1" style="width:300px; height:200px; margin:300px auto">
+		<tr>
+			<td style="width:300px">
+			아이디 <input type="text" name="playerId" style="width:100%"/>
+			</td>
+			<td rowspan="2" style="width:300px">
+			<input type="submit" value="로그인" style="width:100%; height:100%"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			패스워드<input type="text" name="solar" style="width:100%"/>
+			</td>
+		</tr>
+		</table>
+		<input type="hidden" name="action" value="login" style="width:100%; height:100%"/>
+		<input type="hidden" name="page" value="home" style="width:100%; height:100%"/>
+</form>
+	<h3 style="width:300px; margin:0px auto">
+	<a id="a_join" href=#>회원가입</a>
+	</h3>
+</div>
 <script>
-$('#btn2').click(function(){
-	alert('클릭');
-	location.assign('<%=request.getContextPath()%>/player.do?action=find2&page=2_positions')
-});
-$('#btn4').submit(function(){
-	alert('클릭');
-});
-$('#btn5').submit(function(){
-	alert('클릭');
+$('#login_form').submit(function(){
+	alert('로그인성공');
+	});
+$('#a_join').click(function(){
+'<%=request.getContextPath()%>/ player.do?action=move&page = home';
 });
 </script>
-</div>
 </body>
+
 </html>

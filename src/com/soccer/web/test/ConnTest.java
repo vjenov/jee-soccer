@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.soccer.web.enums.DBDriver;
+import com.soccer.web.enums.DBUrl;
 import com.soccer.web.pool.Constants;
 
 public class ConnTest {
@@ -15,8 +17,8 @@ public class ConnTest {
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			Class.forName("oracle.jdbc.OracleDriver");
-			conn = DriverManager.getConnection(Constants.ORACLE_URL, Constants.USERID, Constants.PASSWORD);
+			Class.forName(DBDriver.ORACLE_DRIVER.toString());
+			conn = DriverManager.getConnection(DBUrl.ORACLE_URL.toString(), Constants.USERID, Constants.PASSWORD);
 			if(conn != null) {
 				System.out.println("success");
 				stmt = conn.createStatement();
