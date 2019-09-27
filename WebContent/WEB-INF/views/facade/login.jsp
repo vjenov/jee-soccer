@@ -34,7 +34,7 @@
 	<h3 style="width:300px; margin:0px auto"><a id="a_join" href="#">회원가입</a></h3>
 </div>
 <script>
-app.init();
+app.init('${ctx}');
 </script>
 </body>
 

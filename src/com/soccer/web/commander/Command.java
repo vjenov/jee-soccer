@@ -11,7 +11,7 @@ public class Command implements Order{
 	protected String action, page, domain, view;
 	@Override
 	public void execute() {
-		this.view = String.format(Constants.SINGLE_PATH, page);
+		this.view = String.format(Constants.DOUBLE_PATH,"facade", page);
 		
 	}
 
