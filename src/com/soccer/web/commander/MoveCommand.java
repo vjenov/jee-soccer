@@ -9,6 +9,7 @@ public class MoveCommand extends Command{
 		setAction(request.getParameter("action"));
 		execute();
 		System.out.println("무브커맨드도착");
+		
 	}
 	public void execute() {
 		setPage(request.getParameter("page"));
