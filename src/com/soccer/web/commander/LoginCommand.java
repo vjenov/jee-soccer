@@ -20,7 +20,7 @@ public class LoginCommand extends Command{
 		p.setPlayerId(request.getParameter("playerId"));
 		p.setSolar(request.getParameter("solar"));
 		p = PlayerServiceImpl.getInstance().login(p);
-		if(!p.getPlayerId().equals("") && !p.getSolar().equals("")) {
+		if(p.getPlayerId() != null && p.getSolar() != null) {
 			System.out.println("로그인 성공");
 			setPage(request.getParameter("page"));
 		}else {
