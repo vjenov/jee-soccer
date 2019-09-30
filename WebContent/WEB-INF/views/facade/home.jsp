@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <jsp:include page="../common/head.jsp"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,7 @@
 			<input type="hidden" name = "page" value="5_find_by_teamId_height_name"/><br/>
 			<input type="submit" value = "전송"/>
 			</form>
+<jsp:include page="../common/foot.jsp"/>
 <script>
 $('#btn2').click(function(){
 	alert('클릭');
@@ -40,6 +42,3 @@ $('#btn5').submit(function(){
 	alert('클릭');
 });
 </script>
-</div>
-</body>
-</html>
