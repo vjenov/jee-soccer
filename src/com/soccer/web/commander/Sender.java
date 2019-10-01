@@ -8,6 +8,7 @@ public class Sender {
 	public static void forward(HttpServletRequest request, HttpServletResponse response) { // .jsp - Send to jsp file
 		try {
 			System.out.println("sender도착" + Receiver.cmd.getView());
+			request.setAttribute("page", "login");
 			request.getRequestDispatcher(Receiver.cmd.getView()).forward(request, response);
 			}catch(Exception e) {
 				e.printStackTrace();

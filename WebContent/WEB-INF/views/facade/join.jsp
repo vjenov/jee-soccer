@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <jsp:include page="../common/head.jsp"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,13 +13,13 @@
  <form id="join_form">
 	<div id="join_tab" >
 			<div id="join_tab_item_1" >
-				PLAYERID  <input class="input_text" type="text" name="playerId"/>
+				PLAYERID  <input id="join_playerId" class="input_text" type="text" name="playerId"/>
 			</div>
 			<div id="join_tab_item_2">
 				PLAYERNAME  <input class="input_text" type="text" name="playerName"/>
 			</div>  
 			<div id="join_tab_item_3">
-				PASSWORD  <input class="input_text" type="text" name="solar">
+				SOLAR  <input id="join_solar" class="input_text" type="text" name="solar">
 			</div>
 			<div id="join_tab_item_4">
 				TEAMID  <input class="input_text" type="text" name="teamId">
@@ -44,14 +43,14 @@
 				WEIGHT  <input class="input_text" type="text" name="weight">
 			</div>
 			<div id="join_tab_item_11">
-				<input id="join_submit" type="submit" value="회원가입" /> <h3><a id="a_return" href="#">뒤로가기</a></h3>
-			</div>  
+				<input id="join_btn" type="button" value="회원가입" />
+			</div> 
+			<h3><a id="a_return" href="#">뒤로가기</a></h3>
 	</div>
-	<input type="hidden" name="action" value="login" />
-	<input type="hidden" name="page" value="home" />
+	<input type="hidden" name="action" value="create" />
+	<input type="hidden" name="page" value="login" />
  </form>
 
 <script>
 app.init('${ctx}');
 </script>
-<jsp:include page="../common/foot.jsp"/>

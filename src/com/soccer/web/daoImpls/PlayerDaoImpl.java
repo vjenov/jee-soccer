@@ -106,6 +106,23 @@ public class PlayerDaoImpl implements PlayerDao{
 		
 		return players;
 	}
+	@Override
+	public boolean insertPlayer(PlayerBean param) {
+		boolean flag = false;
+		try {
+			String sql = "INSERT INTO PLAYER(PLAYER_ID, SOLAR, PLAYER_NAME, TEAM_ID)\r\n" + 
+					"VALUES(?, ?, '김태민', 'K03')";
+			PreparedStatement stmt = DatabaseFactory.createDatabase(Constants.VENDOR).getConnection().prepareStatement(sql);
+			stmt.setString(1, param.getPlayerId());
+			stmt.setString(2, param.getSolar());
+			int rs = stmt.executeUpdate();
+			flag = (rs==1);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
 
 
 }

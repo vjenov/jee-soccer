@@ -11,7 +11,11 @@ public class PlayerServiceImpl implements PlayerService{
 	private static PlayerServiceImpl instance = new PlayerServiceImpl();
 	public static PlayerServiceImpl getInstance() {return instance;}
 	private PlayerServiceImpl() {}
-	
+	//0.조인
+	public boolean join(PlayerBean param) {
+		return PlayerDaoImpl.getInstance().insertPlayer(param);
+	}
+	//1.로그인
 	public PlayerBean login(PlayerBean param) {
 		System.out.println("서비스임플 로그인 접속");
 		System.out.println("playerId값" + param.getPlayerId());
@@ -32,5 +36,5 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<PlayerBean> findByTeamIdHeightName(PlayerBean param) {
 		return PlayerDaoImpl.getInstance().selectByTeamIdPositionHeightName(param);
 	}
-
+	
 }

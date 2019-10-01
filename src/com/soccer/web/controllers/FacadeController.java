@@ -29,7 +29,11 @@ public class FacadeController extends HttpServlet {
 			request.getSession().setAttribute(r.toString().toLowerCase(), request.getContextPath() + ((r.ordinal() ==0)
 					? "" : "/resources/" + r.toString().toLowerCase()));
 		}
-		
+		if(request.getParameter("page") == null) {
+			request.setAttribute("page", "login");	
+		}else {
+			request.setAttribute("page", request.getParameter("page"));
+		}
 		/*
 		session.setAttribute("img", request.getContextPath() + "/resources/img");
 		session.setAttribute("js", request.getContextPath() + "/resources/js");
@@ -38,7 +42,7 @@ public class FacadeController extends HttpServlet {
 		*/
 		request
 		.getRequestDispatcher(String.format(Constants.DOUBLE_PATH, request.getServletPath().substring(1, request.getServletPath().indexOf(".")),
-				"login"))
+				"main"))
 		.forward(request, response);
 	}
 }
